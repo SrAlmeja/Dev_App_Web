@@ -15,7 +15,7 @@ public class simpleRequests : MonoBehaviour
     void Start()
     {
         // A correct website page.
-        StartCoroutine(GetRequest("https://script.google.com/macros/s/AKfycby4x_r16XoChRnGzC8X1gtvWMqplGngAfOmuHxQq0E/dev"));
+        StartCoroutine(GetRequest("https://script.google.com/macros/s/AKfycbwjcnXqpD5nznRx0CTwcxIvxDDARvu2yNCatNfNO0kPow_FHzFGc7huD45RIpT_6mmu/exec"));
 
         // A non-existing page.
         //StartCoroutine(GetRequest("https://error.html"));
