@@ -43,24 +43,19 @@ public class simpleRequests : MonoBehaviour
                     texto.text = webRequest.downloadHandler.text;
                     Debug.Log(pages[page] + ":\nReceived: " + webRequest.downloadHandler.text);
                     JSONNode root = JSONNode.Parse(webRequest.downloadHandler.text);
-                    Debug.Log(root["Juan"]);
-                    
-                    foreach(var obj in root.Keys){
-                        Debug.Log(root[obj][0]["name"]);
+
+                    foreach (var key in root.Keys)
+                    {
+                        Debug.Log(key);
                         Persona a = ScriptableObject.CreateInstance<Persona>();
-                        foreach(var token in root[obj][0]["name"])
-                        {
-                            a.name = token.Value["name"];
-                            a.edad = token.Value["edad"];
-                            a.color = token.Value["color"];
-                            a.email = token.Value["email"];
-                            a.comidas = token.Value["comidas"];
-                            AssetDatabase.CreateAsset(a, "Assets/Personas/"+a.name+".asset");
-                            personas.Add(a);
-                        }
-
+                        
+                        a.nombre = key;
+                        a.edad = root[key][0]["edad"];
+                        a.color= root[key][0]["color"];
+                        a.email = root[key] [0] ["email"];
+                        a.comidas = root [key] [0] ["comidas"];
+                        AssetDatabase.CreateAsset(a, "Assets/Personas/"+a.nombre+".asset");
                     }
-
                     break;
             }
         }
