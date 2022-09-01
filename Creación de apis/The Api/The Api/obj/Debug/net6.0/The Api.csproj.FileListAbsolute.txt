@@ -1,0 +1,27 @@
+C:\Users\Rojo13\Documents\Repos\SrAlmeja\Dev_App_Web\Creación de apis\The Api\The Api\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Rojo13\Documents\Repos\SrAlmeja\Dev_App_Web\Creación de apis\The Api\The Api\bin\Debug\net6.0\appsettings.json
+C:\Users\Rojo13\Documents\Repos\SrAlmeja\Dev_App_Web\Creación de apis\The Api\The Api\bin\Debug\net6.0\The Api.exe
+C:\Users\Rojo13\Documents\Repos\SrAlmeja\Dev_App_Web\Creación de apis\The Api\The Api\bin\Debug\net6.0\The Api.deps.json
+C:\Users\Rojo13\Documents\Repos\SrAlmeja\Dev_App_Web\Creación de apis\The Api\The Api\bin\Debug\net6.0\The Api.runtimeconfig.json
+C:\Users\Rojo13\Documents\Repos\SrAlmeja\Dev_App_Web\Creación de apis\The Api\The Api\bin\Debug\net6.0\The Api.dll
+C:\Users\Rojo13\Documents\Repos\SrAlmeja\Dev_App_Web\Creación de apis\The Api\The Api\bin\Debug\net6.0\The Api.pdb
+C:\Users\Rojo13\Documents\Repos\SrAlmeja\Dev_App_Web\Creación de apis\The Api\The Api\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\Rojo13\Documents\Repos\SrAlmeja\Dev_App_Web\Creación de apis\The Api\The Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Rojo13\Documents\Repos\SrAlmeja\Dev_App_Web\Creación de apis\The Api\The Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Rojo13\Documents\Repos\SrAlmeja\Dev_App_Web\Creación de apis\The Api\The Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Rojo13\Documents\Repos\SrAlmeja\Dev_App_Web\Creación de apis\The Api\The Api\obj\Debug\net6.0\The Api.csproj.AssemblyReference.cache
+C:\Users\Rojo13\Documents\Repos\SrAlmeja\Dev_App_Web\Creación de apis\The Api\The Api\obj\Debug\net6.0\The Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rojo13\Documents\Repos\SrAlmeja\Dev_App_Web\Creación de apis\The Api\The Api\obj\Debug\net6.0\The Api.AssemblyInfoInputs.cache
+C:\Users\Rojo13\Documents\Repos\SrAlmeja\Dev_App_Web\Creación de apis\The Api\The Api\obj\Debug\net6.0\The Api.AssemblyInfo.cs
+C:\Users\Rojo13\Documents\Repos\SrAlmeja\Dev_App_Web\Creación de apis\The Api\The Api\obj\Debug\net6.0\The Api.csproj.CoreCompileInputs.cache
+C:\Users\Rojo13\Documents\Repos\SrAlmeja\Dev_App_Web\Creación de apis\The Api\The Api\obj\Debug\net6.0\The Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Rojo13\Documents\Repos\SrAlmeja\Dev_App_Web\Creación de apis\The Api\The Api\obj\Debug\net6.0\The Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Rojo13\Documents\Repos\SrAlmeja\Dev_App_Web\Creación de apis\The Api\The Api\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Rojo13\Documents\Repos\SrAlmeja\Dev_App_Web\Creación de apis\The Api\The Api\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Rojo13\Documents\Repos\SrAlmeja\Dev_App_Web\Creación de apis\The Api\The Api\obj\Debug\net6.0\scopedcss\bundle\The Api.styles.css
+C:\Users\Rojo13\Documents\Repos\SrAlmeja\Dev_App_Web\Creación de apis\The Api\The Api\obj\Debug\net6.0\The Api.csproj.CopyComplete
+C:\Users\Rojo13\Documents\Repos\SrAlmeja\Dev_App_Web\Creación de apis\The Api\The Api\obj\Debug\net6.0\The Api.dll
+C:\Users\Rojo13\Documents\Repos\SrAlmeja\Dev_App_Web\Creación de apis\The Api\The Api\obj\Debug\net6.0\refint\The Api.dll
+C:\Users\Rojo13\Documents\Repos\SrAlmeja\Dev_App_Web\Creación de apis\The Api\The Api\obj\Debug\net6.0\The Api.pdb
+C:\Users\Rojo13\Documents\Repos\SrAlmeja\Dev_App_Web\Creación de apis\The Api\The Api\obj\Debug\net6.0\The Api.genruntimeconfig.cache
+C:\Users\Rojo13\Documents\Repos\SrAlmeja\Dev_App_Web\Creación de apis\The Api\The Api\obj\Debug\net6.0\ref\The Api.dll
