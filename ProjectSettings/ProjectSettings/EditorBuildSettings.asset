@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/AlmejaStudio/Scenes/Project1.unity
+    guid: 2993f67ffe0712b49816e80342463af2
   m_configObjects: {}
