@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.Networking;
@@ -12,7 +13,12 @@ public class UnityClient : MonoBehaviour
     public TMP_Text Text;
 
     //public Buttom 
-    
+    [Serializable]
+    public class ToDoTask
+    {
+        public string name;
+        public bool isComplete;
+    }
     void Start()
     {
         // A correct website page.
@@ -51,10 +57,20 @@ public class UnityClient : MonoBehaviour
                     break; 
             }
 
+IEnumerator GetPost()
+{
+    ToDoTask myTask = new ToDoTask();
+        myTask.name = "MyWork";
+        myTask.isComplete = true;
+        {
+            // Request and wait for the desired page.
+            yield return webRequest.SendWebRequest();
+            string[] pages = uri.Split('/');
+            int page = pages.Length - 1;
+
+            string json = JsonUtility.ToJson(myTask);
+
         }
     }
-    public void PrubeButton()
-    {
-        StartCoroutine(GetRequest("https://localhost:44363/api/todo"));
-    }
+    
 }
