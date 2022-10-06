@@ -10,10 +10,14 @@ using UnityEngine.UI;
 
 public class UnityClient : MonoBehaviour
 {
-    public string nameItem;
+    public TMP_Text itemName;
+    public TMP_Text idText;
+    string nameItem;
     public bool boolItem;
-    public InputField nameItems;
-    public TMP_Text Text;
+    public int itemID;
+    
+    public TMP_Text Titulo;
+    public TMP_Text Trabalenguas;
 
     //public Buttom 
     [Serializable]
@@ -29,7 +33,12 @@ public class UnityClient : MonoBehaviour
         StartCoroutine(GetRequest("https://localhost:44363/api/todo"));
         // A non-existing page.
         //StartCoroutine(GetRequest("https://error.html"));
-        StartCoroutine(PostRequest("https://localhost:44363/api/todo"));
+
+    }
+
+    private void Update()
+    {
+        nameItem = itemName.text;
     }
 
     IEnumerator GetRequest(string uri)
@@ -56,7 +65,8 @@ public class UnityClient : MonoBehaviour
 
                     foreach (var key in root.Keys)
                     {
-                        Text.text = (pages[page] + ":\nReceived: " + webRequest.downloadHandler.text);
+                        Titulo.text = (pages[page] + ":\nReceived: " + webRequest.downloadHandler.text);
+                        Trabalenguas.text = (pages[page] + ":\nReceived: " + webRequest.downloadHandler.text);
                     }
 
                     break;
@@ -92,13 +102,31 @@ public class UnityClient : MonoBehaviour
 
     // IEnumerator PutRequest(string uri, int id, string name, bool boolItem)
     // {
-    //     UnityWebRequest put = UnityWebRequest.Put(uri + "/" + id, "{}");
+    //     UnityWebRequest put = UnityWebRequest.Put(uri + "/" + id, "{\"Id\":"+id+",\"Name\":\""+ name+"\", \"BoolTem\":\""+boolItem+"\"}");
+    //     put.SetRequestHeader("Content-Type", "application/json");
+    //     yield return put.Send();
+    //
+    //     if (put.isNetworkError)
+    //     {
+    //         Debug.Log(put.error);
+    //     }
+    //     else
+    //     {
+    //         Debug.Log(put.downloadHandler.text);
+    //     }
+    //
+    //     put.Dispose();
     // }
             
     // IEnumerator DeleteRequest(string uri)
     // {
     //     
     // }
+
+    public void IsEmptyPage(bool tog)
+    {
+        boolItem = tog;
+    }
     
     public void GetRequestButton()
     {
@@ -108,6 +136,16 @@ public class UnityClient : MonoBehaviour
     public void PostRequestButton()
     {
         StartCoroutine(PostRequest("https://localhost:44363/api/todo"));
+    }
+
+    // public void PutRequestButton()
+    // {
+    //     StartCoroutine(PutRequest("https://localhost:44363/api/todo", itemID, nameItem, boolItem));
+    // }
+
+    public void DeletButton()
+    {
+        
     }
     
 }
