@@ -100,23 +100,23 @@ public class UnityClient : MonoBehaviour
         postRequest.Dispose();
     }
 
-    // IEnumerator PutRequest(string uri, int id, string name, bool boolItem)
-    // {
-    //     UnityWebRequest put = UnityWebRequest.Put(uri + "/" + id, "{\"Id\":"+id+",\"Name\":\""+ name+"\", \"BoolTem\":\""+boolItem+"\"}");
-    //     put.SetRequestHeader("Content-Type", "application/json");
-    //     yield return put.Send();
-    //
-    //     if (put.isNetworkError)
-    //     {
-    //         Debug.Log(put.error);
-    //     }
-    //     else
-    //     {
-    //         Debug.Log(put.downloadHandler.text);
-    //     }
-    //
-    //     put.Dispose();
-    // }
+    IEnumerator PutRequest(string uri, int id, string name, bool boolItem)
+    {
+        UnityWebRequest put = UnityWebRequest.Put(uri + "/" + id, {\"Id\":"id",\"Name\":\"" name"\", \"BoolTem\":\""boolItem"\"}");
+        put.SetRequestHeader("Content-Type", "application/json");
+        yield return put.Send();
+    
+        if (put.isNetworkError)
+        {
+            Debug.Log(put.error);
+        }
+        else
+        {
+            Debug.Log(put.downloadHandler.text);
+        }
+    
+        put.Dispose();
+    }
             
     // IEnumerator DeleteRequest(string uri)
     // {
