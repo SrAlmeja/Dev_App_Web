@@ -10,25 +10,18 @@ using UnityEngine.UI;
 
 public class UnityClient : MonoBehaviour
 {
-    public TMP_Text itemName;
-    public TMP_Text idText;
-    string nameItem;
-    public bool boolItem;
-    public int itemID;
-    
-    public TMP_Text Titulo;
-    public TMP_Text Trabalenguas;
-
-    //public Buttom 
+    private UIController _uiController;
     [Serializable]
     public class ToDoTask
     {
-        public string name;
-        public bool isComplete;
+        public long id;
+        public string title;
+        public string text;
     }
 
     void Start()
     {
+        _uiController = GetComponent<UIController>();
         // A correct website page.
         StartCoroutine(GetRequest("https://localhost:44363/api/todo"));
         // A non-existing page.
@@ -36,12 +29,9 @@ public class UnityClient : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-        nameItem = itemName.text;
-    }
+    
 
-    IEnumerator GetRequest(string uri)
+    public IEnumerator GetRequest(string uri)
     {
         using (UnityWebRequest webRequest = UnityWebRequest.Get(uri))
         {
@@ -65,20 +55,26 @@ public class UnityClient : MonoBehaviour
 
                     foreach (var key in root.Keys)
                     {
-                        Titulo.text = (pages[page] + ":\nReceived: " + webRequest.downloadHandler.text);
-                        Trabalenguas.text = (pages[page] + ":\nReceived: " + webRequest.downloadHandler.text);
+                        if (root["title"] != null)
+                        {
+                            _uiController.tituloText.text = root["title"];    
+                        }
+                        else if (root["text"] != null)
+                        {
+                            _uiController.trabalenguasText.text = root["text"];
+                        }
                     }
-
                     break;
             }
         }
     }
     
-    IEnumerator PostRequest(string uri)
+    public IEnumerator PostRequest(string uri, long id, string title, string text)
     {
         ToDoTask myTask = new ToDoTask();
-        myTask.name = nameItem;
-        myTask.isComplete = boolItem;
+        myTask.id = id;
+        myTask.title = title;
+        myTask.text = text;
 
         string json = JsonUtility.ToJson(myTask);
                 
@@ -100,9 +96,14 @@ public class UnityClient : MonoBehaviour
         postRequest.Dispose();
     }
 
-    IEnumerator PutRequest(string uri, int id, string name, bool boolItem)
+    public IEnumerator PutRequest(string uri, long id, string titulo, string trabalenguas)
     {
-        UnityWebRequest put = UnityWebRequest.Put(uri + "/" + id, {\"Id\":"id",\"Name\":\"" name"\", \"BoolTem\":\""boolItem"\"}");
+        ToDoTask toDoTask = new ToDoTask();
+        toDoTask.title = titulo;
+        toDoTask.text = trabalenguas;
+        
+        string obj_JSON = JsonUtility.ToJson(toDoTask);
+        UnityWebRequest put = UnityWebRequest.Put(uri + "/" + id, obj_JSON);
         put.SetRequestHeader("Content-Type", "application/json");
         yield return put.Send();
     
@@ -118,34 +119,18 @@ public class UnityClient : MonoBehaviour
         put.Dispose();
     }
             
-    // IEnumerator DeleteRequest(string uri)
-    // {
-    //     
-    // }
-
-    public void IsEmptyPage(bool tog)
+    public IEnumerator DeleteRequest(string uri, long id)
     {
-        boolItem = tog;
+        UnityWebRequest www = UnityWebRequest.Delete(uri + "/" + id);
+        yield return www.SendWebRequest();
+        if (www.result != UnityWebRequest.Result.Success)
+        {
+            Debug.Log(www.responseCode);
+            Debug.Log(www.error);
+        }
+        www.Dispose();
     }
+
     
-    public void GetRequestButton()
-    {
-        StartCoroutine(GetRequest("https://localhost:44363/api/todo"));
-    }
-    
-    public void PostRequestButton()
-    {
-        StartCoroutine(PostRequest("https://localhost:44363/api/todo"));
-    }
-
-    // public void PutRequestButton()
-    // {
-    //     StartCoroutine(PutRequest("https://localhost:44363/api/todo", itemID, nameItem, boolItem));
-    // }
-
-    public void DeletButton()
-    {
-        
-    }
     
 }
